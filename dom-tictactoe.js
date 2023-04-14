@@ -28,6 +28,8 @@ const handleClick = (element) => {
 
 const addMarker = (id) => {
   console.log(`We'll place a mark on square: ${id}`)
+  document.getElementById(id).innerHTML = currentMarker
+  updateBoard()
   // @TODO, Mix & Match. 
   // You will need the following pieces:
   
@@ -37,7 +39,7 @@ const addMarker = (id) => {
   // .innerHTML 
   
   // Arrange the above pieces into a single line of code
-  // to add an X or O to the board to the DOM so it can be scene on the screen.
+  // to add an X or O to the board to the DOM so it can be seen on the screen.
 }
 
 // passes the element's id attribute from HTML to be used
@@ -63,9 +65,8 @@ const checkForWin = () => {
     changeMarker()
   }
 }
-
+const win = () => {
 const horizontalWin = () => {
-  // @TODO, Your code here: to check for horizontal wins
 }
 
 const verticalWin = () => {
@@ -75,10 +76,18 @@ const verticalWin = () => {
 const diagonalWin = () => {
   // @TODO, Your code here: to check for diagonal wins
 }
+// const changeMarker = () => {
+//   if(currentMarker === "X"){
+//     currentMarker = "O"
+//   } else {
+//     currentMarker = "X"
+//   }
+// }
+}
 
 const changeMarker = () => {
   // ternary operator: if it's an X make it an O, if O make it an X
-  currentMarker = currentMarker === "X" ? "O" : "X"
+  currentMarker === "X" ? "O" : "O"
 }
 
 const resetBoard = () => {
@@ -96,7 +105,7 @@ const resetBoard = () => {
   
   // @TODO, Your code here: make sure to reset the array of arrays to empty for a new game
 }
-
+win(resetBoard)
 // **BONUSES**
 
 // 1. Display the current player's turn
